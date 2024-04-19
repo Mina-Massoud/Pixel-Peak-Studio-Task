@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import List from "../../Icons/List";
 import Location from "../../Icons/Location";
 import SearchComponent from "../common/SearchComponent";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ location }) {
+
+
   return (
     <div className="justify-between  text-black card-style flex bg-[#ffffff66] py-4 px-[2em]">
       <div className="left-side-container flex items-center gap-[5em]">
@@ -15,7 +17,9 @@ export default function Navbar() {
 
         <div className="location flex items-center gap-3">
           <Location />
-          <p>Egypt, Cairo</p>
+          <p>
+            {location?.countryName}, {location?.city}
+          </p>
         </div>
       </div>
       <div className="right-side flex items-center gap-[4em]">

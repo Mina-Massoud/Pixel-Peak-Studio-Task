@@ -9,7 +9,7 @@ const RoutingHandler = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes>
+      <Routes location={location} key={location.key}>
         <Route path="/" element={<WeatherPage />} />
         <Route path="create-account" element={<CreateAnAccount />} />
       </Routes>

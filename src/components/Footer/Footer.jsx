@@ -36,29 +36,31 @@ export default function Footer() {
   return (
     <div className="card-style p-10 pb-[5em] !rounded-none">
       <div className="flex gap-[5em]">
-        <div className="flex-col max-w-[25%]">
+        <div className="flex flex-col gap-[2em] max-w-[25%]">
           <h1 className="text-[#0FB3BB] text-[2.23rem] font-[400]">Sky Cast</h1>
           <p>
             Funding freemium long tail hypotheses first mover advantage assets
             ownership
           </p>
-          <div className="flex items-center gap-4 pt-[1.3em]">
-            <Email />
-            <a
-              className="outline-none text-[#000000d9] text-[1rem] inline-block"
-              href="mailto:SkyCast@mail.cor"
-            >
-              SkyCast@mail.cor
-            </a>
-          </div>
-          <div className="flex items-center gap-4 pt-[1.3em]">
-            <Phone />
-            <a
-              className="outline-none text-[#000000d9] text-[1rem] inline-block"
-              href="tel:12 3456 7890"
-            >
-              + 12 3456 7890
-            </a>
+          <div className="flex flex-col gap-[1em]">
+            <div className="flex items-center gap-4">
+              <Email />
+              <a
+                className="outline-none text-[#000000d9] text-[1rem] inline-block"
+                href="mailto:SkyCast@mail.cor"
+              >
+                SkyCast@mail.cor
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <Phone />
+              <a
+                className="outline-none text-[#000000d9] text-[1rem] inline-block"
+                href="tel:12 3456 7890"
+              >
+                + 12 3456 7890
+              </a>
+            </div>
           </div>
         </div>
 

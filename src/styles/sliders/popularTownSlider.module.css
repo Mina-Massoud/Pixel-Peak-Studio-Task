@@ -14,7 +14,6 @@
 .embla__container {
   backface-visibility: hidden;
   display: flex;
-  padding: 0px 20px;
   touch-action: pan-y;
   margin-left: calc(var(--slide-spacing) * -1);
 }

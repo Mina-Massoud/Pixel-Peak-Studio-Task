@@ -2,9 +2,16 @@ import React from "react";
 import Clouds from "../../../assets/Cloud-Img.png";
 import DownList from "../../../Icons/DownList";
 import CreateAccountForm from "./CreateAccountForm";
+import { motion } from "framer-motion";
 export default function CreateAnAccount() {
   return (
-    <div className="flex-grow flex">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="flex-grow flex"
+    >
       <div className="left-side h-[100vh] max-h-[100vh] gradient-bg fixed w-[50%] py-[4em]">
         <h1 className="text-center text-[2.5rem] px-[4em] font-bold">
           Join to our community
@@ -23,6 +30,6 @@ export default function CreateAnAccount() {
         </div>
         <CreateAccountForm />
       </div>
-    </div>
+    </motion.div>
   );
 }
