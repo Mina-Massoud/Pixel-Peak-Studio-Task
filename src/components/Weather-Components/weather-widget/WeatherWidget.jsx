@@ -40,7 +40,6 @@ export default function WeatherWidget({ data }) {
 
   useEffect(() => {
     if (!data) return;
-    console.log(data);
     setTownData(
       data.map((day) => ({
         //get first 3chars of day name
@@ -94,7 +93,7 @@ export default function WeatherWidget({ data }) {
       <WidgetSlider options={OPTIONS} styles={styles}>
         {townData.length > 0 &&
           townData.map((item, index) => (
-            <div className={styles["embla__slide"]} key={index}>
+            <div className={styles["embla__slide"]} key={item.id}>
               <WidgetSliderItem
                 key={item.id}
                 onClick={() => setActiveDay(item)}
@@ -128,7 +127,7 @@ export default function WeatherWidget({ data }) {
           {activeDay?.airConditions?.length > 0 &&
             activeDay.airConditions.map((item, index) => {
               return (
-                <div className="item flex items-center gap-4">
+                <div key={item.value} className="item flex items-center gap-4">
                   {item.icon}
                   <div className="flex font-semibold flex-col">
                     <h1 className="text-[0.9rem]">{item.title}</h1>

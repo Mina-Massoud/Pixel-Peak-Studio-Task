@@ -69,7 +69,11 @@ export default function Footer() {
             <h3 className="py-[1em] text-[#92989F] font-semibold">Services</h3>
             <div className="flex gap-4 flex-col">
               {footerSections.services.map((item, index) => {
-                return <Link to={item.link}>{item.title}</Link>;
+                return (
+                  <Link key={item.link} to={item.link}>
+                    {item.title}
+                  </Link>
+                );
               })}
             </div>
           </div>
@@ -78,7 +82,11 @@ export default function Footer() {
             <h3 className="py-[1em] text-[#92989F] font-semibold">Support</h3>
             <div className="flex gap-4 flex-col">
               {footerSections.support.map((item, index) => {
-                return <Link to={item.link}>{item.title}</Link>;
+                return (
+                  <Link key={item.link} to={item.link}>
+                    {item.title}
+                  </Link>
+                );
               })}
             </div>
           </div>
@@ -87,7 +95,11 @@ export default function Footer() {
             <h3 className="py-[1em] text-[#92989F] font-semibold">Company</h3>
             <div className="flex gap-4 flex-col">
               {footerSections.company.map((item, index) => {
-                return <Link to={item.link}>{item.title}</Link>;
+                return (
+                  <Link key={item.link} to={item.link}>
+                    {item.title}
+                  </Link>
+                );
               })}
             </div>
           </div>
@@ -96,7 +108,11 @@ export default function Footer() {
             <h3 className="py-[1em] text-[#92989F] font-semibold">Legal</h3>
             <div className="flex gap-4 flex-col">
               {footerSections.legal.map((item, index) => {
-                return <Link to={item.link}>{item.title}</Link>;
+                return (
+                  <Link key={item.link} to={item.link}>
+                    {item.title}
+                  </Link>
+                );
               })}
             </div>
           </div>

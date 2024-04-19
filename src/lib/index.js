@@ -2,11 +2,11 @@ import axios from "axios";
 
 export async function getLatandLon() {
   return axios
-    .get("http://ip-api.com/json/")
+    .get("https://ipapi.co/json/")
     .then((response) => {
       return {
-        lat: response.data.lat,
-        lon: response.data.lon,
+        lat: response.data.latitude,
+        lon: response.data.longitude,
         countryName: response.data.country,
         city: response.data.city,
       };
@@ -32,7 +32,6 @@ export async function getWeatherData({ lat, lon, countryName, city }) {
 
       return currentItemDate !== previousItemDate;
     });
-    console.log("fetched");
     return { filteredData: filteredData, location: { countryName, city } };
   } catch (error) {
     console.log(error);
@@ -93,7 +92,6 @@ export async function get24hCast(lat, lon) {
       return timestamp >= currentTime && timestamp <= next24Hours;
     });
 
-    console.log(filteredData);
     return filteredData;
   } catch (error) {
     console.log(error);

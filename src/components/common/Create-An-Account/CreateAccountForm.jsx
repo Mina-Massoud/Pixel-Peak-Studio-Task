@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import { createAccount } from "../../../Auth/GoogleAuth/sanityClient";
 
 import { useNavigate } from "react-router-dom";
+import Facebook from "../../../Icons/Facebook";
+import Instgram from "../../../Icons/Instgram";
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
   name: Yup.string().required("Name is required"),
@@ -123,7 +125,11 @@ export default function CreateAccountForm() {
           <div className="line w-full h-[0.7px] bg-gray-400" />
         </div>
 
-        <GoogleLoginHandler />
+        <div className="flex w-fit justify-center mx-auto gap-4 items-center">
+          <GoogleLoginHandler />
+          <Facebook width={30} height={30} />
+          <Instgram width={30} height={30} />
+        </div>
       </form>
     </div>
   );

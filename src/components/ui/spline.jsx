@@ -65,8 +65,6 @@ async function handle24HourData() {
 
   const weatherData = await get24hCast(lat, lon);
 
-  console.log(weatherData);
-
   return weatherData;
 }
 
