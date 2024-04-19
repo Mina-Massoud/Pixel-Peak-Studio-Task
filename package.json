@@ -11,14 +11,19 @@
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
+    "@sanity/client": "^6.15.19",
+    "@syncfusion/ej2-base": "^25.1.35",
+    "@syncfusion/ej2-react-charts": "^25.1.40",
     "axios": "^1.6.8",
     "embla-carousel-react": "^8.0.2",
+    "formik": "^2.4.5",
     "framer-motion": "^11.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.4.0",
     "react-query": "^3.39.3",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

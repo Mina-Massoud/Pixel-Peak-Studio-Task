@@ -1,10 +1,10 @@
 import { GoogleLogin } from "@react-oauth/google";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { createAccount } from "./sanityClient";
 
 export default function GoogleLoginHandler({ style }) {
-  
+  const navigate = useNavigate();
+
   const decodeJwt = (token) => {
     try {
       return JSON.parse(atob(token.split(".")[1]));
@@ -14,6 +14,15 @@ export default function GoogleLoginHandler({ style }) {
   };
 
   function onSuccessGoogle({ credential }) {
+    const info = decodeJwt(credential);
+    const { name, email, picture } = info;
+
+    localStorage.setItem("account", JSON.stringify({ name, img: picture }));
+
+    createAccount({ name, email, password: "password" }, true).then(() => {
+      navigate("/");
+    });
+
     return 0;
   }
 

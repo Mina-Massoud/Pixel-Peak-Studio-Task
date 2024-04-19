@@ -2,13 +2,12 @@ import axios from "axios";
 
 export async function getLatandLon() {
   return axios
-    .get("https://ipapi.co/json/")
+    .get("http://ip-api.com/json/")
     .then((response) => {
-
       return {
-        lat: response.data.latitude,
-        lon: response.data.longitude,
-        countryName: response.data.country_name,
+        lat: response.data.lat,
+        lon: response.data.lon,
+        countryName: response.data.country,
         city: response.data.city,
       };
     })
@@ -41,7 +40,7 @@ export async function getWeatherData({ lat, lon, countryName, city }) {
   }
 }
 
-export  function popularTownLatLon(townName) {
+export function popularTownLatLon(townName) {
   let lat, lon;
   if (townName === "New York") {
     lat = 40.7128;
@@ -79,4 +78,31 @@ export const formatTime = (date) => {
   const formattedTime = dateTime.toLocaleTimeString("en-US", options);
 
   return formattedTime;
+};
+
+export async function get24hCast(lat, lon) {
+  try {
+    const response = await axios.get(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0bbc2b3658db380a029661dcfdaf34f4&units=metric`
+    );
+    const currentTime = Date.now() / 1000;
+    const next24Hours = currentTime + 24 * 60 * 60;
+
+    const filteredData = response.data.list.filter((item) => {
+      const timestamp = item.dt;
+      return timestamp >= currentTime && timestamp <= next24Hours;
+    });
+
+    console.log(filteredData);
+    return filteredData;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export const time2digit = (dt) => {
+  const date = new Date(dt * 1000);
+  const hours = date.getHours();
+  return `${hours}`;
 };

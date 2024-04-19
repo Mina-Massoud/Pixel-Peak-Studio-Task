@@ -11,7 +11,7 @@ import Clock from "../../../Icons/Clock";
 import Temperature from "../../../Icons/Temperature";
 import Wind from "../../../Icons/Wind";
 import Water_droplet from "../../../Icons/Water_droplet";
-import { getDayName } from "../../../lib";
+import { formatTime, getDayName } from "../../../lib";
 import { motion } from "framer-motion";
 
 const mapWeatherIcon = (weatherId) => {
@@ -31,17 +31,23 @@ const mapWeatherIcon = (weatherId) => {
 };
 
 export default function WeatherWidget({ data }) {
-  const [activeDay, setActiveDay] = useState([]);
+  const [activeDay, setActiveDay] = useState({
+    id: "",
+    airConditions: [],
+    time: "",
+  });
   const [townData, setTownData] = useState([]);
 
   useEffect(() => {
     if (!data) return;
+    console.log(data);
     setTownData(
       data.map((day) => ({
         //get first 3chars of day name
         day: getDayName(day.dt).slice(0, 3),
         weatherIcon: mapWeatherIcon(day.weather[0].id),
         id: day.dt,
+        time: day.dt_txt,
         airConditions: [
           {
             title: "Real Feel",
@@ -73,8 +79,9 @@ export default function WeatherWidget({ data }) {
     setActiveDay({
       airConditions: townData[0].airConditions,
       id: townData[0].id,
+      time: townData[0].time,
     }); // default select first day
-  }, [townData]);
+  }, [townData, data]);
 
   const OPTIONS = { align: "center", dragFree: true };
 
@@ -104,7 +111,7 @@ export default function WeatherWidget({ data }) {
       <div className="flex items-center justify-center my-[1.2em]">
         <Clock width={20} height={20} />
         <h1 className="ml-[0.5em] uppercase text-[1.1rem] font-semibold">
-          3:00pm
+          {formatTime(activeDay?.time)}
         </h1>
       </div>
 

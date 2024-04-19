@@ -3,11 +3,12 @@ import CurrentWeather from "./CurrentWeather";
 import PopularTownsCard from "./Popular-Towns/PopularTownsCard";
 import WeatherWidget from "./weather-widget/WeatherWidget";
 import SkeletonLoading from "../ui/SkeletonLoading";
+import Spline from "../ui/spline";
 
 export default function WeatherDetails({ data }) {
   return (
     <div className="flex w-full px-[2em] flex-grow mx-auto gap-[2em]">
-      <div className="left flex flex-col gap-5 w-[80%]">
+      <div className="left flex flex-col  gap-5 w-[80%]">
         <div className="flex w-full items-start justify-between">
           {data ? (
             <CurrentWeather
@@ -26,8 +27,8 @@ export default function WeatherDetails({ data }) {
 
           <PopularTownsCard />
         </div>
-        <div className="card-style graph flex-grow p-5">
-          <h1>graph</h1>
+        <div className="card-style graph flex-grow p-5 flex items-center justify-center">
+          <Spline />
         </div>
       </div>
       <WeatherWidget data={data} />
