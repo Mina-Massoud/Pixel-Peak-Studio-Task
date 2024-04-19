@@ -125,10 +125,13 @@ export default function CreateAccountForm() {
           <div className="line w-full h-[0.7px] bg-gray-400" />
         </div>
 
-        <div className="flex w-fit justify-center mx-auto gap-4 items-center">
+        <div className="flex w-fit flex-col md:flex-row justify-center mx-auto gap-4 items-center">
           <GoogleLoginHandler />
-          <Facebook width={30} height={30} />
-          <Instgram width={30} height={30} />
+          <div className="flex gap-[1em] items-center">
+            {" "}
+            <Facebook width={30} height={30} />
+            <Instgram width={30} height={30} />
+          </div>
         </div>
       </form>
     </div>

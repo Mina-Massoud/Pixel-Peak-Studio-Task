@@ -10,7 +10,7 @@ export default function CurrentWeather({
   tempMax,
 }) {
   return (
-    <div className="pt-[0.5em] pb-[2.2em] w-[49%] min-w-[49%] px-[2em] flex flex-col gap-[2.5em] card-style ">
+    <div className="pt-[0.5em] pb-[2.2em] w-full md:w-[49%] md:min-w-[49%] px-[2em] flex flex-col gap-[2.5em] card-style ">
       <>
         <div className="flex flex-col text-[0.9rem] self-start items-center">
           <h1>Current Weather</h1>

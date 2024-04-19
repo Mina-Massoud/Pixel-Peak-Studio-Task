@@ -89,7 +89,7 @@ export default function WeatherWidget({ data }) {
   }
 
   return (
-    <div className="right w-[20%] max-w-[20%] card-style p-4 min-h-full">
+    <div className="right w-full lg:w-[20%] lg:max-w-[20%] card-style p-4 min-h-full">
       <WidgetSlider options={OPTIONS} styles={styles}>
         {townData.length > 0 &&
           townData.map((item, index) => (

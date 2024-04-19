@@ -12,7 +12,7 @@ export default function CreateAnAccount() {
       transition={{ duration: 0.3 }}
       className="flex-grow flex"
     >
-      <div className="left-side h-[100vh] max-h-[100vh] gradient-bg fixed w-[50%] py-[4em]">
+      <div className="left-side hidden lg:block h-[100vh] max-h-[100vh] gradient-bg fixed w-[50%] py-[4em]">
         <h1 className="text-center text-[2.5rem] px-[4em] font-bold">
           Join to our community
         </h1>
@@ -23,7 +23,7 @@ export default function CreateAnAccount() {
         </p>
         <img src={Clouds} className="object-contain relative left-0" alt="" />
       </div>
-      <div className="right-side flex flex-col gap-[2em] ml-[50%] p-[4em] w-[50%]">
+      <div className="right-side flex flex-col gap-[2em] lg:ml-[50%] p-[4em] w-full lg:w-[50%]">
         <div className="flex items-center gap-3 w-fit ml-auto">
           <p className="text-[#00000080] font-semibold">English (U.K)</p>
           <DownList />

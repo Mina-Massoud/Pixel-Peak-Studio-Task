@@ -136,7 +136,7 @@ export default function PopularTownsCard({ data }) {
   const OPTIONS = { align: "start", dragFree: true };
 
   return (
-    <div className="py-[1em] w-[50%] max-w-[49%] min-w-[49%] px-[1.2em] flex flex-col gap-[1.5em] card-style ">
+    <div className="py-[1em] max-w-full md:w-[50%] md:max-w-[49%] md:min-w-[49%] px-[1.2em] flex flex-col gap-[1.5em] card-style ">
       <div className="flex text-[0.98rem] poppins items-center gap-4 px-2 text-gray-500 border-b-[2px] pb-[1em] border-b-[#00000014] ">
         <h1
           onClick={() => {

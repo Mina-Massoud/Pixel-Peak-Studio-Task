@@ -7,9 +7,9 @@ import Spline from "../ui/spline";
 
 export default function WeatherDetails({ data }) {
   return (
-    <div className="flex w-full px-[2em] flex-grow mx-auto gap-[2em]">
-      <div className="left flex flex-col  gap-5 w-[80%]">
-        <div className="flex w-full items-start justify-between">
+    <div className="flex flex-col lg:flex-row w-full  md:px-[2em] flex-grow mx-auto gap-[2em]">
+      <div className="left flex flex-col gap-5 w-full lg:w-[80%]">
+        <div className="flex flex-col gap-2 md:flex-row w-full items-start justify-between">
           {data ? (
             <CurrentWeather
               time={data[0].dt_txt}

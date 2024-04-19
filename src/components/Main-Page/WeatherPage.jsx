@@ -28,7 +28,7 @@ export default function WeatherPage() {
       transition={{ duration: 0.3 }}
       className="flex flex-col gradient-bg flex-grow"
     >
-      <div className="flex-grow p-4 gap-5 flex flex-col">
+      <div className="flex-grow p-[1em] md:p-4 gap-5 flex flex-col">
         <Navbar location={weatherData?.location} />
         <div className="flex-grow flex flex-col min-h-[75vh]">
           <WeatherDetails data={weatherData?.filteredData} />

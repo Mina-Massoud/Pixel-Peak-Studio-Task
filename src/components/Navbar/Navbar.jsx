@@ -13,8 +13,8 @@ export default function Navbar({ location }) {
   const [showDropDown, setShowDropDown] = useState(false);
 
   return (
-    <div className="justify-between  text-black card-style flex bg-[#ffffff66] py-4 px-[2em]">
-      <div className="left-side-container flex items-center gap-[5em]">
+    <div className="justify-between  text-black card-style flex bg-[#ffffff66] py-[0.5em] md:py-4 px-[1em] md:px-[2em]">
+      <div className="left-side-container flex items-center gap-[1em]">
         <div className="identity flex items-center gap-4">
           <List />
           <h1 className="font-bold text-[1rem] text-[#0FB3BB]">Sky Cast</h1>
@@ -107,7 +107,7 @@ export default function Navbar({ location }) {
         ) : (
           <Link
             to={"/create-account"}
-            className="bg-[#0FB3BB] text-[#000000] py-[1.1875em] px-[2.93em] font-bold rounded-[12px]"
+            className="bg-[#0FB3BB] text-[#000000] px-[2em] py-[0.5em] text-[0.8rem] md:text-[1rem] text-center md:py-[1.1875em] md:px-[2.93em] font-bold rounded-[12px]"
           >
             Sign up
           </Link>
